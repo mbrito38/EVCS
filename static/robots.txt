@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://evcarsales.co/sitemap_index.xml

@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    @apply font-primaryfont text-primaryfontcolor scroll-smooth;
+}
+
+h1 {
+    @apply text-4xl font-bold;
+}
+
+p {
+    @apply text-base font-medium
+}
+
+h2 {
+    @apply text-3xl font-bold;
+}
+
+h3 {
+    @apply font-semibold text-2xl;
+}
+
+h4 {
+    @apply text-xl font-semibold;
+}
+
+.middle-dot::after {
+    content: " \B7 ";
+}
+
+/*Ignore the errors the code works because of postcss*/
+button[class^='button-'], button[class*='button-'] { /* Buttons that have class starting in button- */
+    @apply px-[30px] py-2.5 font-semibold rounded-[2rem] text-lg;
+    &.button-1 {
+        border-radius: 2rem;
+        border: solid 2px #2FA304;
+        padding-right: 45px;
+        white-space: nowrap;
+        color: #2FA304;
+        &::after {
+            @apply left-4 relative;
+            content: url('/img/right-arrow.svg');
+        }
+        &.backwards::before {
+            @apply relative right-4;
+            content: url('/img/right-arrow.svg');
+            display: inline-block;
+            transform: rotate(180deg);
+        }
+        &.backwards {
+            padding-right: 30px;
+            padding-left:45px;
+            &::after {
+                content : '';
+            }
+        }
+    }
+    &.button-2 {
+        @apply text-primaryfontcolor bg-white;                
+    }
+    &.button-3 {
+        @apply text-white bg-[#2FA304];
+        &:hover {
+            @apply bg-[#0D8200]
+        }
+    }
+    &.button-4 {
+        @apply text-primaryfontcolor bg-white border-primaryfontcolor border-solid border-2;   
+        &:hover {
+            @apply text-white border-[#0D8200] bg-[#0D8200]
+        }
+
+    }
+}
+
+input {
+    &.input-1 {
+        @apply font-semibold text-base text-warm_grey bg-[#F6F7F5] border-[#0D8200] border-solid border-1 rounded-[2rem] px-6 py-3
+    }
+}
